@@ -1,0 +1,14 @@
+config_version=5
+
+[application]
+
+config/name="shader"
+run/main_scene="res://01_vertex_shaders/grass.tscn"
+config/features=PackedStringArray("4.2", "Forward Plus")
+config/icon="res://icon.png"
+config/tags=PackedStringArray("rendering")
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080

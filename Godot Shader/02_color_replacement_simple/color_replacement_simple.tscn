@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://cwy0qyjmb062e"]
+
+[ext_resource type="Shader" uid="uid://eu3uvuay0mwj" path="res://02_color_replacement_simple/color_replacement2.tres" id="1_0cnfq"]
+[ext_resource type="Texture2D" uid="uid://w4bklapl0j52" path="res://02_color_replacement_simple/assets/test2.png" id="1_87v3f"]
+[ext_resource type="Shader" uid="uid://d362x726gllk4" path="res://02_color_replacement_simple/color_replacement.tres" id="2_l8qfu"]
+[ext_resource type="Shader" path="res://02_color_replacement_simple/color_replacement_simple.gdshader" id="4_58e4d"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3dbm4"]
+shader = ExtResource("2_l8qfu")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hv4aq"]
+shader = ExtResource("1_0cnfq")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_irskm"]
+shader = ExtResource("4_58e4d")
+shader_parameter/replacement_color = Color(0, 0.898039, 0.862745, 1)
+
+[node name="color_replacement_simple" type="Node2D"]
+
+[node name="ColorPicker" type="ColorPicker" parent="."]
+visible = false
+offset_right = 298.0
+offset_bottom = 576.0
+color = Color(0.129458, 0.148989, 0.180255, 1)
+
+[node name="Test" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(215, 556)
+texture = ExtResource("1_87v3f")
+
+[node name="Test2" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_3dbm4")
+position = Vector2(703, 556)
+texture = ExtResource("1_87v3f")
+
+[node name="Test3" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_hv4aq")
+position = Vector2(1196, 556)
+texture = ExtResource("1_87v3f")
+
+[node name="Test4" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_irskm")
+position = Vector2(1681, 556)
+texture = ExtResource("1_87v3f")
