@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://c37eadagkhn3g"]
+
+[ext_resource type="Shader" uid="uid://cuipn88g84cx3" path="res://Shader/planet_coffe.gdshader" id="1_k4y4e"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7q7q3"]
+shader = ExtResource("1_k4y4e")
+shader_parameter/colorA = Color(0.2, 0, 0.1, 1)
+shader_parameter/colorB = Color(0.7, 0.3, 0.4, 1)
+shader_parameter/colorC = Color(1, 0.2, 0.4, 1)
+shader_parameter/discomode = false
+shader_parameter/speed = 1.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_7q7q3")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

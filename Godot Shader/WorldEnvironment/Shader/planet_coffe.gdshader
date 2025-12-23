@@ -1,4 +1,5 @@
 shader_type canvas_item;
+//shader_type spatial;
 
 uniform vec3 colorA : source_color = vec3(0.2, 0.0, 0.1);
 uniform vec3 colorB : source_color = vec3(0.7, 0.3, 0.4);
