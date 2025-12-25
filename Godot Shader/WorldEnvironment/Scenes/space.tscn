@@ -1,0 +1,38 @@
+[gd_scene load_steps=11 format=3 uid="uid://1dbrrict78jf"]
+
+[ext_resource type="Shader" uid="uid://ck6ptd6u0bayn" path="res://Shader/planet.gdshader" id="1_wnfdr"]
+[ext_resource type="Texture2D" uid="uid://bnsop37o21q2g" path="res://Assets/Picture/Moon/512_moon.jpg" id="2_bj3u6"]
+[ext_resource type="Texture2D" uid="uid://w2tdwr4dmyu7" path="res://Assets/Picture/Planet/2k_mars.jpg" id="3_va77k"]
+[ext_resource type="Texture2D" uid="uid://iywgco0xsgi7" path="res://Assets/Picture/Space/panorama_image(3).png" id="4_wnfdr"]
+
+[sub_resource type="Gradient" id="Gradient_wnfdr"]
+offsets = PackedFloat32Array(0.27162388, 0.85538507)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_bj3u6"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1fjq1"]
+noise = SubResource("FastNoiseLite_bj3u6")
+color_ramp = SubResource("Gradient_wnfdr")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kqa63"]
+shader = ExtResource("1_wnfdr")
+shader_parameter/sky_tex = ExtResource("4_wnfdr")
+shader_parameter/sun_pos = Vector3(30000, 0, -10000)
+shader_parameter/planet_tex = ExtResource("3_va77k")
+shader_parameter/planet_radius = 300.0
+shader_parameter/cloud_tex = SubResource("NoiseTexture2D_1fjq1")
+shader_parameter/cloud_color = Color(1, 1, 1, 1)
+shader_parameter/rotation_speed = 0.02
+shader_parameter/moon_tex = ExtResource("2_bj3u6")
+
+[sub_resource type="Sky" id="Sky_0ll74"]
+sky_material = SubResource("ShaderMaterial_kqa63")
+radiance_size = 0
+
+[sub_resource type="Environment" id="Environment_p3ued"]
+background_mode = 2
+sky = SubResource("Sky_0ll74")
+
+[node name="Space" type="WorldEnvironment"]
+environment = SubResource("Environment_p3ued")
