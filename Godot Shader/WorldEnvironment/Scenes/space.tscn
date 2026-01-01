@@ -3,7 +3,7 @@
 [ext_resource type="Shader" uid="uid://ck6ptd6u0bayn" path="res://Shader/planet.gdshader" id="1_wnfdr"]
 [ext_resource type="Texture2D" uid="uid://bnsop37o21q2g" path="res://Assets/Picture/Moon/512_moon.jpg" id="2_bj3u6"]
 [ext_resource type="Texture2D" uid="uid://w2tdwr4dmyu7" path="res://Assets/Picture/Planet/2k_mars.jpg" id="3_va77k"]
-[ext_resource type="Texture2D" uid="uid://iywgco0xsgi7" path="res://Assets/Picture/Space/panorama_image(3).png" id="4_wnfdr"]
+[ext_resource type="Texture2D" uid="uid://bpjmgk62bffmi" path="res://Assets/Picture/Space/starmap_2020_4k.png" id="4_uqc4w"]
 
 [sub_resource type="Gradient" id="Gradient_wnfdr"]
 offsets = PackedFloat32Array(0.27162388, 0.85538507)
@@ -17,7 +17,7 @@ seamless = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kqa63"]
 shader = ExtResource("1_wnfdr")
-shader_parameter/sky_tex = ExtResource("4_wnfdr")
+shader_parameter/sky_tex = ExtResource("4_uqc4w")
 shader_parameter/sun_pos = Vector3(30000, 0, -10000)
 shader_parameter/planet_tex = ExtResource("3_va77k")
 shader_parameter/planet_radius = 300.0
