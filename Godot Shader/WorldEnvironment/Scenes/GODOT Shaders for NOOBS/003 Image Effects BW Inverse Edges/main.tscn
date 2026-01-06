@@ -1,10 +1,9 @@
 [gd_scene load_steps=31 format=4 uid="uid://dipdf2aru3ui6"]
 
-[ext_resource type="Shader" uid="uid://bduw14qq8q8he" path="res://Scenes/GODOT Shaders for NOOBS/003 Image Effects BW Inverse Edges/invter.gdshader" id="1_0xl7g"]
+[ext_resource type="Shader" uid="uid://mvuj6ckct2tm" path="res://Scenes/GODOT Shaders for NOOBS/003 Image Effects BW Inverse Edges/003.gdshader" id="1_npwr2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0xl7g"]
-shader = ExtResource("1_0xl7g")
-shader_parameter/dist = 0.7
+shader = ExtResource("1_npwr2")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v63mg"]
 resource_name = "red"

@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://bss2k4glf4b2"]
+
+[ext_resource type="Shader" uid="uid://dvlwyu4uoiiks" path="res://Scenes/GODOT Shaders for NOOBS/007 Drawing Shapes/shape.gdshader" id="1_dgq00"]
+[ext_resource type="Shader" uid="uid://c5h6rpk0pbig" path="res://Scenes/GODOT Shaders for NOOBS/007 Drawing Shapes/shape2.gdshader" id="2_mdtg1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mdtg1"]
+render_priority = 0
+shader = ExtResource("1_dgq00")
+shader_parameter/round_radius = 0.1
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ycjyi"]
+material = SubResource("ShaderMaterial_mdtg1")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ycjyi"]
+render_priority = 0
+shader = ExtResource("2_mdtg1")
+shader_parameter/square_radius = 0.5000000074506
+shader_parameter/width = 0.60000000894072
+shader_parameter/height = 0.5000000074506
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_cr83d"]
+material = SubResource("ShaderMaterial_ycjyi")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_ycjyi")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -2, 0, 0)
+mesh = SubResource("PlaneMesh_cr83d")

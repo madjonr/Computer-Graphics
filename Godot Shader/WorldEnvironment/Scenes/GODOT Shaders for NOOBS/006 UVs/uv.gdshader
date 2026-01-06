@@ -15,10 +15,10 @@ void fragment() {
 	float x = UV.x;
 	// 绘制线形函数
 	//float y = x;
-	//float y = sin(x);
-	float y = pow(x, 2);
+	float y = sin(x);
+	//float y = pow(x, 2);
 	vec3 color = vec3(y);
-	
+
 	// polt the line
 	float pct = plot(UV, y);
 	color = (1.0 - pct) * color + pct * vec3(0.0, 1.0, 0.0);
