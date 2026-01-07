@@ -1,3 +1,42 @@
-[gd_scene format=3 uid="uid://djubsubqy8f8i"]
+[gd_scene load_steps=11 format=3 uid="uid://djubsubqy8f8i"]
+
+[ext_resource type="Shader" uid="uid://cks64dhmwu22l" path="res://Scenes/GODOT Shaders for NOOBS/008 Angles Polygons Polar Coordinates/008.gdshader" id="1_6k5lo"]
+[ext_resource type="Shader" uid="uid://khae4bwttomr" path="res://Scenes/GODOT Shaders for NOOBS/008 Angles Polygons Polar Coordinates/polarcoords.gdshader" id="2_6yntp"]
+[ext_resource type="Shader" uid="uid://b1rwqy6ekn45g" path="res://Scenes/GODOT Shaders for NOOBS/008 Angles Polygons Polar Coordinates/ploygon.gdshader" id="2_i3jkd"]
+[ext_resource type="Texture2D" uid="uid://dfas44vsso5bl" path="res://icon.svg" id="4_id37v"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i3jkd"]
+render_priority = 0
+shader = ExtResource("1_6k5lo")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6yntp"]
+material = SubResource("ShaderMaterial_i3jkd")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6yntp"]
+render_priority = 0
+shader = ExtResource("2_i3jkd")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_id37v"]
+material = SubResource("ShaderMaterial_6yntp")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_id37v"]
+render_priority = 0
+shader = ExtResource("2_6yntp")
+shader_parameter/logo_tex = ExtResource("4_id37v")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_of072"]
+material = SubResource("ShaderMaterial_id37v")
 
 [node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_6yntp")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2, 0, 0)
+mesh = SubResource("PlaneMesh_id37v")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -2, 0, 0)
+mesh = SubResource("PlaneMesh_of072")
