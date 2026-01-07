@@ -1,0 +1,40 @@
+[gd_scene load_steps=10 format=3 uid="uid://dapjct2fxqlfm"]
+
+[ext_resource type="Shader" uid="uid://r1aypix3a8y6" path="res://Scenes/GODOT Shaders for NOOBS/009 Transformations/009.gdshader" id="1_iue51"]
+[ext_resource type="Shader" uid="uid://c70chld4p3hnw" path="res://Scenes/GODOT Shaders for NOOBS/009 Transformations/rotation.gdshader" id="2_sqq3r"]
+[ext_resource type="Shader" uid="uid://bw48sdruiirlg" path="res://Scenes/GODOT Shaders for NOOBS/009 Transformations/scale.gdshader" id="3_o12py"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sqq3r"]
+render_priority = 0
+shader = ExtResource("1_iue51")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_o12py"]
+material = SubResource("ShaderMaterial_sqq3r")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o12py"]
+render_priority = 0
+shader = ExtResource("2_sqq3r")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4hvbk"]
+material = SubResource("ShaderMaterial_o12py")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4hvbk"]
+render_priority = 0
+shader = ExtResource("3_o12py")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nmciq"]
+material = SubResource("ShaderMaterial_4hvbk")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_o12py")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2, 0, 0)
+mesh = SubResource("PlaneMesh_4hvbk")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -2, 0, 0)
+mesh = SubResource("PlaneMesh_nmciq")
