@@ -1,7 +1,5 @@
 shader_type spatial;
-
-render_mode cull_disabled;
-render_mode unshaded;
+render_mode cull_disabled, unshaded;
 
 #include "funcs.gdshaderinc"
 

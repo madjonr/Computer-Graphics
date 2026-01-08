@@ -1,6 +1,19 @@
-[gd_scene load_steps=14 format=4 uid="uid://bmkm2bgrxn5fa"]
+[gd_scene load_steps=17 format=4 uid="uid://bmkm2bgrxn5fa"]
 
 [ext_resource type="Shader" uid="uid://v58lgjmx34dl" path="res://Scenes/GODOT Shaders for NOOBS/002 Image Effects BCS/002-2.gdshader" id="1_5jlq2"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5jlq2"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_5jlq2"]
+sky_material = SubResource("ProceduralSkyMaterial_5jlq2")
+
+[sub_resource type="Environment" id="Environment_fdlvh"]
+background_mode = 2
+sky = SubResource("Sky_5jlq2")
+tonemap_mode = 2
+glow_enabled = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jg82c"]
 shader = ExtResource("1_5jlq2")
@@ -38,7 +51,7 @@ cull_mode = 2
 albedo_color = Color(0.40177333, 0.18786725, 0.90633965, 1)
 roughness = 0.5
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_5jlq2"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_jg82c"]
 _surfaces = [{
 "aabb": AABB(-1, -1, -1, 2, 2, 2),
 "format": 34896613377,
@@ -156,7 +169,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("/////wAA//8AAAAAAAD/////AAAAAP//AAD//wAA//////9/////f////3////9/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_5jlq2")
+shadow_mesh = SubResource("ArrayMesh_jg82c")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xedsb"]
 resource_name = "Wood-tree"
@@ -225,6 +238,9 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_w08sl")
 
 [node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_fdlvh")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 material = SubResource("ShaderMaterial_jg82c")

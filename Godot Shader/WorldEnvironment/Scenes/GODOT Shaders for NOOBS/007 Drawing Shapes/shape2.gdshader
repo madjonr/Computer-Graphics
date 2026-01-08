@@ -1,6 +1,5 @@
 shader_type spatial;
-render_mode unshaded;
-render_mode cull_disabled;
+render_mode unshaded, cull_disabled;
 
 uniform float  square_radius: hint_range(0.0, 1.0, 0.1) = 0.3;
 uniform float width: hint_range(0.0, 1.0, 0.1) = 0.3;

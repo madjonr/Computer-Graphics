@@ -1,0 +1,97 @@
+[gd_scene load_steps=22 format=3 uid="uid://cnfwbvwqxnom4"]
+
+[ext_resource type="Shader" uid="uid://b65s8pgfg4mse" path="res://Scenes/GODOT Shaders for NOOBS/010 Combining shapes and masking/mask1.gdshader" id="1_qpex5"]
+[ext_resource type="Texture2D" uid="uid://dfas44vsso5bl" path="res://icon.svg" id="2_34oew"]
+[ext_resource type="Shader" uid="uid://bxjvsmvmp1qp0" path="res://Scenes/GODOT Shaders for NOOBS/010 Combining shapes and masking/mask2.gdshader" id="3_a7ui7"]
+[ext_resource type="Shader" uid="uid://dbqgeesxbkwga" path="res://Scenes/GODOT Shaders for NOOBS/010 Combining shapes and masking/mask3.gdshader" id="4_y5nwm"]
+[ext_resource type="Shader" uid="uid://cgqpabfmaowgx" path="res://Scenes/GODOT Shaders for NOOBS/010 Combining shapes and masking/mask4.gdshader" id="5_e4vmp"]
+[ext_resource type="Shader" uid="uid://my1quhqugrfx" path="res://Scenes/GODOT Shaders for NOOBS/010 Combining shapes and masking/mask5.gdshader" id="6_54lf1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_34oew"]
+render_priority = 0
+shader = ExtResource("1_qpex5")
+shader_parameter/logo1_tex = ExtResource("2_34oew")
+shader_parameter/color = Color(0.8842648, 0.39423224, 0.7495599, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_a7ui7"]
+material = SubResource("ShaderMaterial_34oew")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a7ui7"]
+load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.s3tc.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a7ui7"]
+render_priority = 0
+shader = ExtResource("3_a7ui7")
+shader_parameter/logo1_tex = SubResource("CompressedTexture2D_a7ui7")
+shader_parameter/color = Color(0, 1, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_y5nwm"]
+material = SubResource("ShaderMaterial_a7ui7")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e4vmp"]
+render_priority = 0
+shader = ExtResource("4_y5nwm")
+shader_parameter/logo1_tex = ExtResource("2_34oew")
+shader_parameter/color = Color(1, 0, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_54lf1"]
+material = SubResource("ShaderMaterial_e4vmp")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_54lf1"]
+load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.s3tc.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8adw3"]
+render_priority = 0
+shader = ExtResource("5_e4vmp")
+shader_parameter/logo1_tex = SubResource("CompressedTexture2D_54lf1")
+shader_parameter/color = Color(1, 0, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_aj3a4"]
+material = SubResource("ShaderMaterial_8adw3")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8adw3"]
+load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.s3tc.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aj3a4"]
+render_priority = 0
+shader = ExtResource("6_54lf1")
+shader_parameter/logo1_tex = SubResource("CompressedTexture2D_8adw3")
+shader_parameter/color = Color(1, 0.5, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_05u3v"]
+material = SubResource("ShaderMaterial_aj3a4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_54lf1"]
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8adw3"]
+material = SubResource("StandardMaterial3D_54lf1")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_a7ui7")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2, 0, 0)
+mesh = SubResource("PlaneMesh_y5nwm")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -2, 0, 0)
+mesh = SubResource("PlaneMesh_54lf1")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -2, -2, 0)
+mesh = SubResource("PlaneMesh_aj3a4")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -2, 0)
+mesh = SubResource("PlaneMesh_05u3v")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2, -2, 0)
+mesh = SubResource("PlaneMesh_8adw3")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 3.1569557)
