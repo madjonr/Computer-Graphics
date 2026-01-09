@@ -1,0 +1,99 @@
+[gd_scene load_steps=24 format=3 uid="uid://cpb5kc5x1kagp"]
+
+[ext_resource type="Shader" uid="uid://dgwm5ks2hvljh" path="res://Scenes/GODOT Shaders for NOOBS/011 Random and Noise/random.gdshader" id="1_lbf2m"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ongft"]
+render_priority = 0
+shader = ExtResource("1_lbf2m")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_lq3qa"]
+material = SubResource("ShaderMaterial_ongft")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_lbf2m"]
+noise_type = 2
+fractal_type = 0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ongft"]
+noise = SubResource("FastNoiseLite_lbf2m")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lq3qa"]
+albedo_texture = SubResource("NoiseTexture2D_ongft")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jp75v"]
+material = SubResource("StandardMaterial3D_lq3qa")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_itoly"]
+noise_type = 0
+fractal_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_j6lvx"]
+noise = SubResource("FastNoiseLite_itoly")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xm5au"]
+albedo_texture = SubResource("NoiseTexture2D_j6lvx")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_yvwwy"]
+material = SubResource("StandardMaterial3D_xm5au")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_v865s"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wpr2k"]
+noise = SubResource("FastNoiseLite_v865s")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cv457"]
+albedo_texture = SubResource("NoiseTexture2D_wpr2k")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vlvi3"]
+material = SubResource("StandardMaterial3D_cv457")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_w1w3u"]
+noise_type = 3
+fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fc7mj"]
+noise = SubResource("FastNoiseLite_w1w3u")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_02bpu"]
+albedo_texture = SubResource("NoiseTexture2D_fc7mj")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vpm6s"]
+material = SubResource("StandardMaterial3D_02bpu")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_yxwin"]
+noise_type = 4
+fractal_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0mc46"]
+noise = SubResource("FastNoiseLite_yxwin")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6umi7"]
+albedo_texture = SubResource("NoiseTexture2D_0mc46")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hqs6f"]
+material = SubResource("StandardMaterial3D_6umi7")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_lq3qa")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -2, 0, 0)
+mesh = SubResource("PlaneMesh_jp75v")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2, 0, 0)
+mesh = SubResource("PlaneMesh_yvwwy")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -2, -2, 0)
+mesh = SubResource("PlaneMesh_vlvi3")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -2, 0)
+mesh = SubResource("PlaneMesh_vpm6s")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2, -2, 0)
+mesh = SubResource("PlaneMesh_hqs6f")
