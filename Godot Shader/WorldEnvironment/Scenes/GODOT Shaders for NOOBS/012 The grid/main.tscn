@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://ck6cwilbv3y36"]
+
+[ext_resource type="Shader" uid="uid://y6bltp2j07e5" path="res://Scenes/GODOT Shaders for NOOBS/012 The grid/canvasi.gdshader" id="1_0gpaq"]
+[ext_resource type="Texture2D" uid="uid://dfas44vsso5bl" path="res://icon.svg" id="2_af5rq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tht71"]
+shader = ExtResource("1_0gpaq")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_tht71")
+position = Vector2(70, 70)
+texture = ExtResource("2_af5rq")

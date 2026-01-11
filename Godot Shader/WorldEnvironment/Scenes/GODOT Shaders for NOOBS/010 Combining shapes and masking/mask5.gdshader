@@ -3,7 +3,7 @@ render_mode unshaded, cull_disabled, depth_draw_always;
 
 #include "funcs.gdshaderinc"
 
-uniform sampler2D logo1_tex: filter_linear, source_color;
+uniform sampler2D logo1_tex: source_color, repeat_disable;
 uniform vec3 color: source_color = vec3(1.0, 0.5, 0.0);
 
 void fragment() {
@@ -28,5 +28,5 @@ void fragment() {
 	float mask = rays * circles;
 	ALBEDO = vec3(mask * color);
 	ALPHA = mask;
-	EMISSION = vec3(mask * color * 50.0);   // 自发光显示不了，没找到问题
+	EMISSION = vec3(mask * color * 50.0);   // 自发光显示不了，没找到问题，可以直接在 ALBEDO 上乘一个大于 1 的值。
 }

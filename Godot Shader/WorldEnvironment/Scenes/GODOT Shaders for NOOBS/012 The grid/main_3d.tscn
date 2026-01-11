@@ -1,0 +1,104 @@
+[gd_scene load_steps=25 format=3 uid="uid://cnypgytfaxtaq"]
+
+[ext_resource type="Shader" uid="uid://c7amuyr3gduv6" path="res://Scenes/GODOT Shaders for NOOBS/012 The grid/repetition.gdshader" id="1_2vj2a"]
+[ext_resource type="Texture2D" uid="uid://dfas44vsso5bl" path="res://icon.svg" id="2_fsu0k"]
+[ext_resource type="Shader" uid="uid://dpeu8m6kfvgxn" path="res://Scenes/GODOT Shaders for NOOBS/012 The grid/igrid.gdshader" id="3_fgg5d"]
+[ext_resource type="Shader" uid="uid://yvxun343rve8" path="res://Scenes/GODOT Shaders for NOOBS/012 The grid/fragemnted.gdshader" id="4_gvpn4"]
+[ext_resource type="Shader" uid="uid://dtnyrn3l7vqpv" path="res://Scenes/GODOT Shaders for NOOBS/012 The grid/maskgrid.gdshader" id="5_cwiht"]
+[ext_resource type="Shader" uid="uid://bnhwbrb72ks7w" path="res://Scenes/GODOT Shaders for NOOBS/012 The grid/noisegrid.gdshader" id="6_yhnec"]
+[ext_resource type="Shader" uid="uid://cuiumppb0yaql" path="res://Scenes/GODOT Shaders for NOOBS/012 The grid/trianglemask.gdshader" id="7_8u5pw"]
+[ext_resource type="Shader" uid="uid://cvpi166myxk1w" path="res://Scenes/GODOT Shaders for NOOBS/012 The grid/ledbanner.gdshader" id="8_fffgv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fsu0k"]
+render_priority = 0
+shader = ExtResource("1_2vj2a")
+shader_parameter/tex = ExtResource("2_fsu0k")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fgg5d"]
+material = SubResource("ShaderMaterial_fsu0k")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fgg5d"]
+load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.s3tc.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gvpn4"]
+render_priority = 0
+shader = ExtResource("3_fgg5d")
+shader_parameter/tex = SubResource("CompressedTexture2D_fgg5d")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_cwiht"]
+material = SubResource("ShaderMaterial_gvpn4")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cwiht"]
+load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.s3tc.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yhnec"]
+render_priority = 0
+shader = ExtResource("4_gvpn4")
+shader_parameter/tex = SubResource("CompressedTexture2D_cwiht")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8u5pw"]
+material = SubResource("ShaderMaterial_yhnec")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cwiht"]
+render_priority = 0
+shader = ExtResource("5_cwiht")
+shader_parameter/size = 5
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_yhnec"]
+material = SubResource("ShaderMaterial_cwiht")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8u5pw"]
+render_priority = 0
+shader = ExtResource("6_yhnec")
+shader_parameter/size = 6
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fffgv"]
+material = SubResource("ShaderMaterial_8u5pw")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fffgv"]
+render_priority = 0
+shader = ExtResource("7_8u5pw")
+shader_parameter/size = 35
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_aafjd"]
+material = SubResource("ShaderMaterial_fffgv")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aafjd"]
+render_priority = 0
+shader = ExtResource("8_fffgv")
+shader_parameter/size = 50
+shader_parameter/led_color = Color(0.09019608, 0.8784314, 0.8901961, 1)
+shader_parameter/banner_color = Color(0.24313726, 0.2, 0.15686275, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_2hkwu"]
+material = SubResource("ShaderMaterial_aafjd")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -2, 2, 0)
+mesh = SubResource("PlaneMesh_fgg5d")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 2, 0)
+mesh = SubResource("PlaneMesh_cwiht")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2, 2, 0)
+mesh = SubResource("PlaneMesh_8u5pw")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -2, 0, 0)
+mesh = SubResource("PlaneMesh_yhnec")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_fffgv")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2, 0, 0)
+mesh = SubResource("PlaneMesh_aafjd")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -2, -2, 0)
+mesh = SubResource("PlaneMesh_2hkwu")
