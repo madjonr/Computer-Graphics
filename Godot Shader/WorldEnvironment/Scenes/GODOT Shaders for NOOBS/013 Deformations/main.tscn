@@ -1,0 +1,104 @@
+[gd_scene load_steps=25 format=3 uid="uid://dgn4ctg8f8a4l"]
+
+[ext_resource type="Shader" uid="uid://b5rsnqitvflfu" path="res://Scenes/GODOT Shaders for NOOBS/013 Deformations/sine_waves.gdshader" id="1_vuev7"]
+[ext_resource type="Shader" uid="uid://bf2e2lq7i6ks4" path="res://Scenes/GODOT Shaders for NOOBS/013 Deformations/sine_cosine.gdshader" id="2_nf8p6"]
+[ext_resource type="Texture2D" uid="uid://domg5okrs00um" path="res://Scenes/GODOT Shaders for NOOBS/013 Deformations/textures/water.jpg" id="3_aif8n"]
+[ext_resource type="Shader" uid="uid://bk4test1y30im" path="res://Scenes/GODOT Shaders for NOOBS/013 Deformations/shocwave.gdshader" id="4_51vy6"]
+[ext_resource type="Shader" uid="uid://bb82fvtuciueu" path="res://Scenes/GODOT Shaders for NOOBS/013 Deformations/warp.gdshader" id="5_syvo4"]
+[ext_resource type="Texture2D" uid="uid://b5b8srdujuvwa" path="res://Scenes/GODOT Shaders for NOOBS/013 Deformations/textures/skin.jpg" id="6_g52ok"]
+[ext_resource type="Shader" uid="uid://dtnltskopmmo7" path="res://Scenes/GODOT Shaders for NOOBS/013 Deformations/texture_distortion.gdshader" id="7_2eyxr"]
+[ext_resource type="Texture2D" uid="uid://b23b3ielnqshb" path="res://Scenes/GODOT Shaders for NOOBS/013 Deformations/textures/uv_offset2.png" id="8_3nh3q"]
+[ext_resource type="Shader" uid="uid://pp1pda60rwyc" path="res://Scenes/GODOT Shaders for NOOBS/013 Deformations/spherify.gdshader" id="9_gs6ul"]
+[ext_resource type="Texture2D" uid="uid://dfas44vsso5bl" path="res://icon.svg" id="10_nlupc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nf8p6"]
+render_priority = 0
+shader = ExtResource("1_vuev7")
+shader_parameter/defstrength = 0.999999977648
+shader_parameter/deffreg = 1.499999966472
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_aif8n"]
+material = SubResource("ShaderMaterial_nf8p6")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aif8n"]
+render_priority = 0
+shader = ExtResource("2_nf8p6")
+shader_parameter/albedo = ExtResource("3_aif8n")
+shader_parameter/distortion = 0.05999999865888
+shader_parameter/time_scale = Vector2(1, 1.5)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_51vy6"]
+material = SubResource("ShaderMaterial_aif8n")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_syvo4"]
+render_priority = 0
+shader = ExtResource("4_51vy6")
+shader_parameter/albedo = ExtResource("3_aif8n")
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/force = 0.0999999977648
+shader_parameter/mask_thickness = 0.5
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_g52ok"]
+material = SubResource("ShaderMaterial_syvo4")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_2eyxr"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3nh3q"]
+noise = SubResource("FastNoiseLite_2eyxr")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g52ok"]
+render_priority = 0
+shader = ExtResource("5_syvo4")
+shader_parameter/albedo = ExtResource("6_g52ok")
+shader_parameter/noise = SubResource("NoiseTexture2D_3nh3q")
+shader_parameter/warp_strength = 0.0250000011875
+shader_parameter/warp_speed = 1.4790000702525
+shader_parameter/warp_scale = 0.60800002888
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_2eyxr"]
+material = SubResource("ShaderMaterial_g52ok")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3nh3q"]
+render_priority = 0
+shader = ExtResource("7_2eyxr")
+shader_parameter/albedo = ExtResource("3_aif8n")
+shader_parameter/distortion_map = ExtResource("8_3nh3q")
+shader_parameter/distortion = Vector2(0.015, 0.024)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gs6ul"]
+material = SubResource("ShaderMaterial_3nh3q")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nlupc"]
+render_priority = 0
+shader = ExtResource("9_gs6ul")
+shader_parameter/warp_borders = 0.0
+shader_parameter/icon_tex = ExtResource("10_nlupc")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_04ajv"]
+material = SubResource("ShaderMaterial_nlupc")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -2, 0, 0)
+mesh = SubResource("PlaneMesh_aif8n")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_51vy6")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2, 0, 0)
+mesh = SubResource("PlaneMesh_g52ok")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -2, -2, 0)
+mesh = SubResource("PlaneMesh_2eyxr")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -2, 0)
+mesh = SubResource("PlaneMesh_gs6ul")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2, -2, 0)
+mesh = SubResource("PlaneMesh_04ajv")
