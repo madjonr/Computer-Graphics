@@ -15,7 +15,7 @@
 render_priority = 0
 shader = ExtResource("1_vuev7")
 shader_parameter/defstrength = 0.999999977648
-shader_parameter/deffreg = 1.499999966472
+shader_parameter/deffreg = 0.999999977648
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_aif8n"]
 material = SubResource("ShaderMaterial_nf8p6")
@@ -24,7 +24,7 @@ material = SubResource("ShaderMaterial_nf8p6")
 render_priority = 0
 shader = ExtResource("2_nf8p6")
 shader_parameter/albedo = ExtResource("3_aif8n")
-shader_parameter/distortion = 0.05999999865888
+shader_parameter/distortion = 0.03999999910592
 shader_parameter/time_scale = Vector2(1, 1.5)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_51vy6"]

@@ -11,7 +11,7 @@ void fragment() {
 	// sin(uv.x*TAU) 可以让一个波出现在x[0,1]之间，再乘以deffreg频率可以在0~1之间出现多次波形率
 	// 最后乘以defstrength变形强度，增大波幅
 	uv.y += sin(uv.x * TAU * deffreg) * defstrength;   
-	float f = clamp(sin(uv.y * TAU * 5.0), 0.0, 1.0);
+	float f = clamp(sin(uv.y * TAU * 1.0), 0.0, 1.0);  // 在上一步的波形基础上进一步增加频率
 
 	ALBEDO = vec3(f);
 }
